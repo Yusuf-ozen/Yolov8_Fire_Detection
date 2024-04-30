@@ -10,7 +10,7 @@
 
 ## Installation
 Download the face detection repository:
-`git clone https://github.com/Yusuf-ozen/face_detection_with_yolov8.git` 
+`git clone https://github.com/Yusuf-ozen/Yolov8_Fire_Detection.git` 
 
 
 Install all necessary library:
