@@ -10,24 +10,41 @@
 
 ## Installation
 Download the face detection repository:
-`git clone https://github.com/Yusuf-ozen/Yolov8_Fire_Detection.git` 
+``` shell
+# Clone repo
+git clone https://github.com/Yusuf-ozen/Yolov8_Fire_Detection.git
+```
+
+Navigate to the project directory:
+``` shell
+cd Yolov8_Fire_Detection
+```
+
 
 
 Install all necessary library:
-`pip install -r requirements.txt` 
+``` shell
+pip install -r requirements.txt
+```
 
-Navigate to the project directory:
-`cd Yolov8_Fire_Detection` 
+
+
 
 ## Testing On Real-Time Webcam
 Run this code at git bash or cmd:
-`python yolov8s_live_test.py` 
+``` shell
+python yolov8s_live_test.py
+```
+
 
 ## Testing on an Image
 Run this code at git bash or cmd and change `/path/image` according your files. Using `--resize_width 400` and `--resize_height 400` the size of output image can change:
 
 
-`python yolov8s_image_test.py /path/image.jpg --resize_width 400 --resize_height 300` 
+``` shell
+python yolov8s_image_test.py /path/image.jpg --resize_width 400 --resize_height 300
+```
+
 
 ![Resim Açıklaması](assets/fire_p.jpg)
 
@@ -35,19 +52,41 @@ Run this code at git bash or cmd and change `/path/image` according your files. 
 ## Testing on a Video
 Run this code at git bash or cmd and change `/path/image` according your files. Using `--resize_width 400` and `--resize_height 400` the size of output of the video can change:
 
+``` shell
+python yolov8s_video_test.py /path/video.mp4 --resize_width 1280 --resize_height 720
+```
 
-`python yolov8s_video_test.py /path/video.mp4 --resize_width 1280 --resize_height 720` 
 
 
 
 <br>
 <div class="gif">
 <p align="center">
-<img src='videos/kv_gif.gif' align="center" width=800>
+<img src='assets/gif.gif' align="center" width=800>
 </p>
 </div>
 </div>
 
+
+
+## Results
+-This results produced after 50 epochs with yolov8s model and [Fire-Dataset](https://www.kaggle.com/datasets/dataclusterlabs/fire-and-smoke-dataset).
+
+
+| F1 Curve | P Curve | PR Curve |
+| :-: | :-: | :-: |
+| ![](results/yolov8/F1_curve.png) | ![](results/yolov8/P_curve.png) | ![](results/yolov8/PR_curve.png) |
+
+| Confusion Matrix | R Curve | results |
+| :-: | :-: | :-: |
+| ![](results/yolov8/confusion_matrix.png) | ![](results/yolov8/R_curve.png) | ![](results/yolov8/results.png) |
+
+
+### Predictions
+
+| label | Prediction | 
+| :-: | :-: |
+| ![](results/yolov8/val_batch0_labels.jpg) | ![](results/yolov8/val_batch0_pred.jpg) |
 
 
 ## Referances
