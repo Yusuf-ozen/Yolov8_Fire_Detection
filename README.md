@@ -43,7 +43,7 @@ Run this code at git bash or cmd and change `/path/image` according your files. 
 <br>
 <div class="gif">
 <p align="center">
-<img src='videos/kv_gif.gif' align="center" width=800>
+<img src='assets/gif.gif' align="center" width=800>
 </p>
 </div>
 </div>
