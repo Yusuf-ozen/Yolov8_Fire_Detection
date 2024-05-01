@@ -1,9 +1,11 @@
-# Yolov8_Fire_Detection
+<h1 align="center"><span>Yolov8 Fire Detection</span></h1>
 
 
 
 [![Python 3.11.6](https://img.shields.io/badge/python-3.11.6-blue.svg)](https://www.python.org/downloads/release/python-3116/)
 [![Git 2.39.1](https://img.shields.io/badge/git-2.39.1-red.svg)](https://git-scm.com/docs/git/2.39.0)
+
+Fire detection with YOLOv8 is an amazing project aimed at utilizing the powerful YOLOv8 object detection algorithm to detect fires in images or videos. Our repository provides a implementation of fire detection using YOLOv8, including training scripts, pre-trained models, and inference tools.
 
 
 # Fire Detection With Yolov8
@@ -89,7 +91,7 @@ python yolov8s_video_test.py /path/video.mp4 --resize_width 1280 --resize_height
 | ![](results/yolov8/val_batch0_labels.jpg) | ![](results/yolov8/val_batch0_pred.jpg) |
 
 
-## Referances
+## References
 https://roboflow.com/
 
 https://github.com/ultralytics/ultralytics
