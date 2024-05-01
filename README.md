@@ -29,7 +29,7 @@ Run this code at git bash or cmd and change `/path/image` according your files. 
 
 `python yolov8s_image_test.py /path/image.jpg --resize_width 400 --resize_height 300` 
 
-![Resim Açıklaması](predicts/images/predict.jpg)
+![Resim Açıklaması](assets/fire_p.jpg)
 
 
 ## Testing on a Video
