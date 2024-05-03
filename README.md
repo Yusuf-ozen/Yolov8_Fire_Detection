@@ -95,7 +95,16 @@ python yolov8s_video_test.py /path/video.mp4 --resize_width 1280 --resize_height
 ## Test Model with Streamlit
 -Using Streamlit framework we can show the results of yolov8 model in web application.
 
+### Usage
+
+``` shell
+streamlit run main.py
+```
+
+
 ### Image Testing
+
+
 
 ![Resim Açıklaması](assets/streamlit_predict_image.png)
 
