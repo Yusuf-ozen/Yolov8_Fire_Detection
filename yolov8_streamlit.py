@@ -14,7 +14,6 @@ def load_model(model_path):
 
 
 def display_tracker_options():
-    #display_tracker = st.radio("Display Tracker", ('Yes', 'No'))
     is_display_tracker = True
     if is_display_tracker:
         tracker_type = "bytetrack.yaml"
@@ -49,7 +48,7 @@ def play_youtube_video(model):
 
     is_display_tracker, tracker = display_tracker_options()
 
-    if st.sidebar.button('Detect Objects'):
+    if st.sidebar.button('Detect Fire'):
         try:
             yt = YouTube(source_youtube)
             stream = yt.streams.filter(file_extension="mp4", res=720).first()
@@ -78,7 +77,7 @@ def play_webcam(model):
 
     source_webcam = config.WEBCAM_PATH
     is_display_tracker, tracker = display_tracker_options()
-    if st.sidebar.button('Detect Objects'):
+    if st.sidebar.button('Detect Fire'):
         try:
             vid_cap = cv2.VideoCapture(source_webcam)
             st_frame = st.empty()
@@ -98,33 +97,3 @@ def play_webcam(model):
         except Exception as e:
             st.sidebar.error("Error loading video: " + str(e))
 
-'''
-def play_stored_video(model):
-    source_vid = st.sidebar.file_uploader("Choose a video...", type=['mp4'])
-    if source_vid is not None:
-        is_display_tracker, tracker = display_tracker_options()
-        video_bytes = source_vid.read()  # Sadece bir kere okuyun
-        if video_bytes:
-            st.video(video_bytes)
-
-            if st.sidebar.button('Detect Video Objects'):
-                try:
-                    vid_cap = cv2.VideoCapture(io.BytesIO(video_bytes))
-                    st_frame = st.empty()
-                    while (vid_cap.isOpened()):
-                        success, image = vid_cap.read()
-                        if success:
-                            _display_detected_frames(
-                                model,
-                                st_frame,
-                                image,
-                                is_display_tracker,
-                                tracker
-                            )
-                        else:
-                            vid_cap.release()
-                            break
-                except Exception as e:
-                    st.sidebar.error("Error loading video: " + str(e))
-
-'''

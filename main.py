@@ -19,18 +19,11 @@ st.set_page_config(
 # Main page heading
 st.title("Fire Detection using YOLOv8")
 
-# Sidebar
-#st.sidebar.header("ML Model Config")
 
 # Model Options
 
 # model_type = st.sidebar.radio(
 #     "Select Task", ['Detection', 'Segmentation'])
-
-# confidence = float(st.sidebar.slider(
-#     "Select Model Confidence", 25, 100, 40)) / 100
-
-# 
 
 # if model_type == 'Detection':
 #     model_path = Path(settings.DETECTION_MODEL)
@@ -63,11 +56,11 @@ if source_radio == config.IMAGE:
                 default_image_path = str(config.DEFAULT_IMAGE)
                 default_image = PIL.Image.open(default_image_path)
                 st.image(default_image_path, caption="Default Image",
-                         use_column_width=True)
+                          use_column_width=True)
             else:
                 uploaded_image = PIL.Image.open(source_img)
                 st.image(source_img, caption="Uploaded Image",
-                         use_column_width=True)
+                          use_column_width=True)
         except Exception as ex:
             st.error("Error occurred while opening the image.")
             st.error(ex)
@@ -78,31 +71,22 @@ if source_radio == config.IMAGE:
             default_detected_image = PIL.Image.open(
                 default_detected_image_path)
             st.image(default_detected_image_path, caption='Detected Image',
-                     use_column_width=True)
+                      use_column_width=True)
         else:
-            if st.sidebar.button('Detect Objects'):
-                res = model.predict(uploaded_image
-                                    )
+            if st.sidebar.button('Detect Fire'):
+                res = model.predict(uploaded_image)
                 boxes = res[0].boxes
                 res_plotted = res[0].plot()[:, :, ::-1]
                 st.image(res_plotted, caption='Detected Image',
-                         use_column_width=True)
-                try:
-                    with st.expander("Detection Results"):
-                        for box in boxes:
-                            st.write(box.data)
-                except Exception as ex:
-                    # st.write(ex)
-                    st.write("No image is uploaded yet!")
+                          use_column_width=True)
 
-# elif source_radio == settings.VIDEO:
-#     helper.play_stored_video(model)
+                
+
 
 elif source_radio == config.WEBCAM:
     yolov8_streamlit.play_webcam(model)
 
-# elif source_radio == settings.RTSP:
-#     helper.play_rtsp_stream(confidence, model)
+
 
 elif source_radio == config.YOUTUBE:
     yolov8_streamlit.play_youtube_video(model)
