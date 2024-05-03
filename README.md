@@ -99,6 +99,9 @@ python yolov8s_video_test.py /path/video.mp4 --resize_width 1280 --resize_height
 
 ![Resim Açıklaması](assets/streamlit_predict_image.png)
 
+### Youtube Video Testing
+
+![Resim Açıklaması](assets/streamlit_predict_youtube.png)
 
 ## References
 https://roboflow.com/
