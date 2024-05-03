@@ -91,6 +91,15 @@ python yolov8s_video_test.py /path/video.mp4 --resize_width 1280 --resize_height
 | ![](results/yolov8/val_batch0_labels.jpg) | ![](results/yolov8/val_batch0_pred.jpg) |
 
 
+
+## Test Model with Streamlit
+-Using Streamlit framework we can show the results of yolov8 model in web application.
+
+### Image Testing
+
+![Resim Açıklaması](assets/streamlit_predict_image.png)
+
+
 ## References
 https://roboflow.com/
 
